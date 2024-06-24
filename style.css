@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  height: 100%;
+  background: #5E5E5E;
+  color: #FFFFFF;
+}
+
+:root {
+  --progress: 1;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.checklist-row {
+  width: 743px;
+  height: 91px;
+  padding: 0px 18px 0 21px;
+  border-radius: 10px;
+  background: #3579f5;
+  display: flex;
+  align-items: center;
+}
+
+.checklist_progress_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.number_wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.number {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  text-align: center;
+}
+
+.checklist {
+  margin-top: -4px;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.checklist_button_row {
+  margin-left: auto;
+}
+
+.checklist_badge {
+  display: inline-block;
+  width: 76px;
+  height: 18px;
+  border-radius: 40px;
+  padding: 0px 13px;
+  background: #2364db;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.checklist_title {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 133%;
+}
+
+.checklist_description {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 145%;
+}
+
+.checklist_button {
+  width: 170px;
+  height: 40px;
+  border-radius: 6px;
+  border: none;
+  padding: 10px 25px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: 0.6px;
+  color: #4777ed;
+}
+
+svg {
+  position: relative;
+  width: 62px;
+  height: 62px;
+  transform: rotate(-90deg);
+}
+
+svg circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 1;
+  stroke-linecap: round;
+  transform: translate(1px, 1px);
+}
+
+svg circle:nth-child(2) {
+  stroke-width: 2;
+  stroke-dasharray: 380;
+  stroke-dashoffset: 380;
+}
+
+.checklist_progress_wrap svg circle:nth-child(2) {
+  stroke-dashoffset: calc(380 - (380 * (var(--progress))) / 100);
+  stroke: #FFFFFF;
+}
